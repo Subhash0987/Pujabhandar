@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Puja Bhandar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-om"></i> Puja Bhandar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i> <span id="cart-count" class="badge bg-warning">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="shop-header text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">The Puja Store</h1>
+            <p class="lead">Browse our complete collection of spiritual items.</p>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <div class="text-center mb-5">
+            <h2>All Products</h2>
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search for Incense, Diya, Thali...">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="images/Brass Puja Thali.webp" class="card-img-top" alt="Thali">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Brass Puja Thali</h5>
+                        <p class="card-text fw-bold text-danger">₹450</p>
+                        <a href="product.html?id=1" class="btn btn-outline-secondary btn-sm">View</a>
+                        <button class="btn btn-primary btn-sm" onclick="addToCart(1, 'Brass Puja Thali', 450, 'images/Brass Puja Thali.webp')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="images/Sandalwood Incense.webp" class="card-img-top" alt="Agarbatti">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sandalwood Incense</h5>
+                        <p class="card-text fw-bold text-danger">₹50</p>
+                        <a href="product.html?id=2" class="btn btn-outline-secondary btn-sm">View</a>
+                        <button class="btn btn-primary btn-sm" onclick="addToCart(2, 'Sandalwood Incense', 50, 'images/Sandalwood Incense.webp')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="images/pure ghee diya.webp" class="card-img-top" alt="Diya">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Pure Ghee Diya (Box)</h5>
+                        <p class="card-text fw-bold text-danger">₹200</p>
+                        <a href="product.html?id=3" class="btn btn-outline-secondary btn-sm">View</a>
+                        <button class="btn btn-primary btn-sm" onclick="addToCart(3, 'Pure Ghee Diya', 200, 'images/pure ghee diya.webp')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="images/ganesh_idol.webp" class="card-img-top" alt="Ganesh">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Eco Ganesh Idol</h5>
+                        <p class="card-text fw-bold text-danger">₹300</p>
+                        <a href="product.html?id=4" class="btn btn-outline-secondary btn-sm">View</a>
+                        <button class="btn btn-primary btn-sm" onclick="addToCart(4, 'Eco Ganesh Idol', 300, 'images/ganesh_idol.webp')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+:root {
+    --primary-color: #ff9933; /* Saffron */
+    --secondary-color: #d32f2f; /* Deep Red */
+    --light-bg: #fffbf0; /* Off-white/Cream */
+}
+
+body {
+    background-color: var(--light-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background-color: var(--secondary-color);
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #e68a00;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+/* --- Hero Slider Styles --- */
+
+/* 1. Force all slider images to be the same height */
+.carousel-item img {
+    height: 600px; /* Adjust this height as needed */
+    object-fit: cover; /* Ensures image doesn't stretch/distort */
+    filter: brightness(0.7); /* Slightly darkens image so white text pops */
+}
+
+/* 2. The Transparent "Glass" Caption Box */
+.glass-caption {
+    background: rgba(255, 255, 255, 0.15); /* See-through white */
+    backdrop-filter: blur(10px); /* The "Frosted Glass" blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    bottom: 20%; /* Move it up slightly */
+    max-width: 600px;
+    margin: 0 auto; /* Center it */
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 400px;
+    }
+    .glass-caption {
+        padding: 15px;
+        bottom: 10%;
+    }
+}

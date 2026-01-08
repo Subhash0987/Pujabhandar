@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-om"></i> Puja Bhandar</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i> <span id="cart-count" class="badge bg-warning">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img id="product-img" src="" class="img-fluid rounded shadow" alt="Product">
+            </div>
+            <div class="col-md-6">
+                <h1 class="display-5" id="product-name">Loading...</h1>
+                <h3 class="text-danger my-3">₹<span id="product-price">0</span></h3>
+                <p class="lead" id="product-desc">Please select a product from the shop.</p>
+                
+                <ul id="product-details">
+                    </ul>
+
+                <div class="d-grid gap-2 col-6 mx-auto mx-md-0 mt-4">
+                    <button id="add-btn" class="btn btn-primary btn-lg">Add to Cart</button>
+                    <a href="shop.html" class="btn btn-outline-secondary">Back to Shop</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // 1. Get the ID from the URL (e.g., product.html?id=1)
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+
+        // 2. Find the product in our database (from script.js)
+        const product = products.find(p => p.id === productId);
+
+        // 3. If product exists, fill in the HTML
+        if (product) {
+            document.getElementById('product-img').src = product.image;
+            document.getElementById('product-name').innerText = product.name;
+            document.getElementById('product-price').innerText = product.price;
+            document.getElementById('product-desc').innerText = product.desc;
+
+            // Fill the details list
+            const list = document.getElementById('product-details');
+            list.innerHTML = ""; // Clear old list
+            if(product.details) {
+                product.details.forEach(detail => {
+                    list.innerHTML += `<li>${detail}</li>`;
+                });
+            }
+
+            // Update the Add to Cart button to add THIS product
+            const btn = document.getElementById('add-btn');
+            btn.onclick = function() {
+                addToCart(product.id, product.name, product.price, product.image);
+            };
+        } else {
+            // If ID is wrong or missing
+            document.querySelector('.container').innerHTML = "<h2 class='text-center'>Product not found! <a href='shop.html'>Go Back</a></h2>";
+        }
+    </script>
+
+</body>
+</html>
