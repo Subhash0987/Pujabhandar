@@ -5,7 +5,7 @@ const products = [
     {
         id: 1,
         name: "Brass Puja Thali Set",
-        price: 450,
+        price: 400,
         // Make sure this filename matches exactly what is in your images folder!
         image: "images/Brass Puja Thali.webp", 
         desc: "This handcrafted brass thali includes a diya, incense holder, bell, and kumkum katori. Perfect for daily puja and festivals.",
@@ -141,4 +141,5 @@ if (searchInput) {
 document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
     renderCart();
+
 });
